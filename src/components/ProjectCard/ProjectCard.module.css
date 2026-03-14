@@ -1,30 +1,20 @@
 .cardContainer {
-  width: 300px;
-  height: 180px;
+  width: 400px;
+  height: 225px;
   position: relative;
   background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 12px;
-  overflow: hidden;
-  flex-shrink: 0;
+  overflow: clip;
+  border-radius: 24px;
+  backface-visibility: hidden;
   transform-style: preserve-3d;
-  transform: rotateY(35deg) scale(0.95);
-  transition: transform 0.4s ease, border-color 0.3s ease, z-index 0s;
-  
-  z-index: 1;
-}
-
-.cardContainer:hover {
-  z-index: 100; 
-  transform: rotateY(0deg) scale(1.1) translateZ(100px);
-  border-color: #666;
+  flex-shrink: 0;
 }
 
 .videoBg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  vertical-align: middle;
   pointer-events: none;
 }
 
@@ -34,13 +24,20 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 15px;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 60%);
   opacity: 0;
   transition: opacity 0.3s ease;
-  pointer-events: none; 
+  pointer-events: none;
+  z-index: 2;
 }
 
 .cardContainer:hover .overlay {
   opacity: 1;
+}
+
+.title {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
 }

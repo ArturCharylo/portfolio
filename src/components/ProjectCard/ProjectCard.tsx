@@ -1,5 +1,3 @@
-'use client';
-
 import styles from './ProjectCard.module.css';
 
 interface ProjectCardProps {
@@ -9,7 +7,7 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ title, videoSrc }: ProjectCardProps) => {
   return (
-    <div className={styles.cardContainer}>
+    <div className={`${styles.cardContainer} js-card`}>
       <video 
         className={styles.videoBg}
         src={videoSrc}
@@ -18,12 +16,8 @@ export const ProjectCard = ({ title, videoSrc }: ProjectCardProps) => {
         muted 
         playsInline 
       />
-      
       <div className={styles.overlay}>
         <h3 className={styles.title}>{title}</h3>
-        <p style={{ color: '#aaa', fontSize: '0.8rem', margin: 0 }}>
-          View Case Study
-        </p>
       </div>
     </div>
   );

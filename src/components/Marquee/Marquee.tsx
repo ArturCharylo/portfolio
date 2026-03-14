@@ -20,33 +20,56 @@ export const Marquee = () => {
   const trackRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    if (!trackRef.current) return;
+    if (!trackRef.current || !containerRef.current) return;
 
-    const tl = gsap.to(trackRef.current, {
+    const track = trackRef.current;
+    const cards = gsap.utils.toArray('.js-card', containerRef.current) as HTMLElement[];
+
+    // Infinite horizontal loop
+    const tl = gsap.to(track, {
       xPercent: -50,
-      duration: 20,
+      duration: 30,
       ease: "none",
       repeat: -1,
     });
 
-    // Pause on hover for better accessibility and focus
     const hoverIn = () => tl.pause();
     const hoverOut = () => tl.play();
-
-    const track = trackRef.current;
     track.addEventListener('mouseenter', hoverIn);
     track.addEventListener('mouseleave', hoverOut);
+
+    const update3D = () => {
+      const windowCenterX = window.innerWidth / 2;
+
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenterX = rect.left + rect.width / 2;
+        const distance = cardCenterX - windowCenterX;
+        const normalizedDistance = distance / (window.innerWidth / 2);
+        const maxRotation = 35;
+        const depth = -150;
+
+        gsap.set(card, {
+          rotationY: normalizedDistance * maxRotation,
+          z: Math.abs(normalizedDistance) * depth,
+          scale: 1 - Math.abs(normalizedDistance) * 0.1,
+        });
+      });
+    };
+
+    // Run the 3D calculation on every frame
+    gsap.ticker.add(update3D);
 
     return () => {
       track.removeEventListener('mouseenter', hoverIn);
       track.removeEventListener('mouseleave', hoverOut);
+      gsap.ticker.remove(update3D);
     };
   }, { scope: containerRef });
 
   return (
     <div className={styles.marqueeContainer} ref={containerRef}>
       <div className={styles.track} ref={trackRef}>
-        {/* Render the list twice to ensure seamless infinite scrolling */}
         {[...PROJECTS, ...PROJECTS].map((project, index) => (
           <ProjectCard 
             key={`${project.id}-${index}`} 
