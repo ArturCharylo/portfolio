@@ -1,0 +1,35 @@
+
+.cardContainer {
+  width: 400px;
+  height: 250px;
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 20px;
+  overflow: hidden;
+  transform: rotateY(-15deg);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.cardContainer:hover {
+  transform: rotateY(0deg) scale(1.05) translateZ(50px);
+  z-index: 10;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.videoBg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}

@@ -38,3 +38,19 @@
   object-fit: cover;
   opacity: 0.6;
 }
+
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+  padding: 80px 0;
+  perspective: 1500px;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  gap: 30px;
+  will-change: transform;
+  transform-style: preserve-3d;
+}

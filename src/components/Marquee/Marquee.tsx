@@ -1,53 +1,58 @@
-import { useEffect, useRef } from 'react';
+'use client';
+
+import { useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ProjectCard } from '../ProjectCard/ProjectCard';
 import styles from './Marquee.module.css';
 
-const ProjectMarquee = () => {
+gsap.registerPlugin(useGSAP);
+
+const PROJECTS = [
+  { id: 1, title: "Project Alpha", video: "/video1.mp4" },
+  { id: 2, title: "Project Beta", video: "/video2.mp4" },
+  { id: 3, title: "Project Gamma", video: "/video3.mp4" },
+  { id: 4, title: "Project Delta", video: "/video4.mp4" },
+];
+
+export const Marquee = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
+  useGSAP(() => {
+    if (!trackRef.current) return;
 
-    // Calculate the width of one full set of items
-    const trackWidth = track.scrollWidth / 2;
-
-    // Infinite seamless loop
-    const animation = gsap.to(track, {
-      x: -trackWidth,
-      duration: 30, // Adjust speed here
+    const tl = gsap.to(trackRef.current, {
+      xPercent: -50,
+      duration: 20,
       ease: "none",
       repeat: -1,
-      // Pause on hover for better UX
-      paused: false,
     });
 
-    const handleMouseEnter = () => animation.pause();
-    const handleMouseLeave = () => animation.resume();
+    // Pause on hover for better accessibility and focus
+    const hoverIn = () => tl.pause();
+    const hoverOut = () => tl.play();
 
-    track.addEventListener('mouseenter', handleMouseEnter);
-    track.addEventListener('mouseleave', handleMouseLeave);
+    const track = trackRef.current;
+    track.addEventListener('mouseenter', hoverIn);
+    track.addEventListener('mouseleave', hoverOut);
 
     return () => {
-      animation.kill();
-      track.removeEventListener('mouseenter', handleMouseEnter);
-      track.removeEventListener('mouseleave', handleMouseLeave);
+      track.removeEventListener('mouseenter', hoverIn);
+      track.removeEventListener('mouseleave', hoverOut);
     };
-  }, []);
-
-  const projects = [1, 2, 3, 4, 5]; // Your project data
+  }, { scope: containerRef });
 
   return (
-    <div className={styles.marqueeWrapper}>
+    <div className={styles.marqueeContainer} ref={containerRef}>
       <div className={styles.track} ref={trackRef}>
-        {/* Render twice for seamless looping */}
-        {[...projects, ...projects].map((id, index) => (
-          <div key={index} className={styles.projectCard}>
-            <div className={styles.cardContent}>
-              Project {id}
-              {/* Internal independent animations go here */}
-            </div>
-          </div>
+        {/* Render the list twice to ensure seamless infinite scrolling */}
+        {[...PROJECTS, ...PROJECTS].map((project, index) => (
+          <ProjectCard 
+            key={`${project.id}-${index}`} 
+            title={project.title} 
+            videoSrc={project.video} 
+          />
         ))}
       </div>
     </div>
