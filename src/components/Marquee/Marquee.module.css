@@ -1,0 +1,19 @@
+.marqueeContainer {
+  width: 100vw;
+  overflow: hidden;
+  background-color: #000;
+  padding: 100px 0;
+  perspective: 1200px; 
+  perspective-origin: center center;
+  display: flex;
+  align-items: center;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  position: relative;
+  gap: 1px; 
+  will-change: transform;
+  transform-style: preserve-3d;
+}
