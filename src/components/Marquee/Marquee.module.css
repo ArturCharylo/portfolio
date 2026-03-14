@@ -3,7 +3,7 @@
   width: 100vw;
   background: #000;
   padding: 60px 0;
-  perspective: 2000px; 
+  perspective: 2500px; 
 }
 
 .track {
@@ -22,7 +22,7 @@
   overflow: hidden;
   position: relative;
   /* Curved perspective look */
-  transform: rotateY(-15deg);
+  transform: rotateY(-55deg);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
 }
 
@@ -41,16 +41,20 @@
 
 .marqueeContainer {
   width: 100%;
-  overflow: hidden;
-  background-color: #000;
+  overflow: visible;
+  background-color: #050505;
   padding: 80px 0;
-  perspective: 1500px;
+  perspective: 2000px;
+  display: flex;
+  align-items: center;
+  isolation: isolate; 
 }
 
 .track {
   display: flex;
   width: max-content;
-  gap: 30px;
+  gap: 5px;
   will-change: transform;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }

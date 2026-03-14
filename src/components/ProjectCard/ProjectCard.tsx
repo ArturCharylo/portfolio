@@ -1,7 +1,5 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
 import styles from './ProjectCard.module.css';
 
 interface ProjectCardProps {
@@ -10,11 +8,8 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ title, videoSrc }: ProjectCardProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
   return (
-    <div className={styles.cardContainer} ref={containerRef}>
-      {/* Background video that animates independently */}
+    <div className={styles.cardContainer}>
       <video 
         className={styles.videoBg}
         src={videoSrc}
@@ -24,16 +19,12 @@ export const ProjectCard = ({ title, videoSrc }: ProjectCardProps) => {
         playsInline 
       />
       
-      {/* Overlay with info that appears on hover via Framer Motion */}
-      <motion.div 
-        className={styles.overlay}
-        initial={{ opacity: 0, y: 20 }}
-        whileHover={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-      >
+      <div className={styles.overlay}>
         <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>View Project Details</p>
-      </motion.div>
+        <p style={{ color: '#aaa', fontSize: '0.8rem', margin: 0 }}>
+          View Case Study
+        </p>
+      </div>
     </div>
   );
 };
