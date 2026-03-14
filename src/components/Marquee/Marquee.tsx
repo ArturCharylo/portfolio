@@ -9,10 +9,10 @@ import styles from './Marquee.module.css';
 gsap.registerPlugin(useGSAP);
 
 const PROJECTS = [
-  { id: 1, title: "Project Alpha", description: "Awesome immersive web experience", video: "/video1.mp4" },
-  { id: 2, title: "Project Beta", description: "Interactive 3D application", video: "/video2.mp4" },
-  { id: 3, title: "Project Gamma", description: "E-commerce platform overhaul", video: "/video3.mp4" },
-  { id: 4, title: "Project Delta", description: "Mobile-first design system", video: "/video4.mp4" },
+  { id: 1, title: "Cryptono", description: "Password manager in an extension", video: "/video1.mp4" },
+  { id: 2, title: "Portfolio", description: "This site", video: "/video2.mp4" },
+  { id: 3, title: "Github", description: "My github overview", video: "/video3.mp4" },
+  { id: 4, title: "PyScripts", description: "Combination of Python scripts", video: "/video4.mp4" },
 ];
 
 export const Marquee = () => {
@@ -25,7 +25,6 @@ export const Marquee = () => {
     const track = trackRef.current;
     const cards = gsap.utils.toArray('.js-card', containerRef.current) as HTMLElement[];
 
-    // Infinite horizontal loop
     const tl = gsap.to(track, {
       xPercent: -50,
       duration: 30,
@@ -41,7 +40,7 @@ export const Marquee = () => {
     const update3D = () => {
       const windowCenterX = window.innerWidth / 2;
       const trackRect = track.getBoundingClientRect();
-      const cylinderRadius = 500; 
+      const cylinderRadius = 1000; 
 
       cards.forEach((card) => {
         const cardCenterX = trackRect.left + card.offsetLeft + (card.offsetWidth / 2);
@@ -53,6 +52,7 @@ export const Marquee = () => {
         const xOffset = targetX - distance;
 
         const targetZ = cylinderRadius * (1 - Math.cos(theta));
+
         gsap.set(card, {
           x: xOffset,
           z: targetZ,
@@ -68,11 +68,12 @@ export const Marquee = () => {
       gsap.ticker.remove(update3D);
     };
   }, { scope: containerRef });
+  const renderProjects = [...PROJECTS, ...PROJECTS, ...PROJECTS, ...PROJECTS];
 
   return (
     <div className={styles.marqueeContainer} ref={containerRef}>
       <div className={styles.track} ref={trackRef}>
-        {[...PROJECTS, ...PROJECTS, ...PROJECTS].map((project, index) => (
+        {renderProjects.map((project, index) => (
           <ProjectCard 
             key={`${project.id}-${index}`} 
             title={project.title}
