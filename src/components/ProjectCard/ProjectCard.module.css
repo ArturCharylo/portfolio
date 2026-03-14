@@ -8,6 +8,12 @@
   backface-visibility: hidden;
   transform-style: preserve-3d;
   flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+.cardContainer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 .videoBg {
@@ -16,6 +22,7 @@
   object-fit: cover;
   vertical-align: middle;
   pointer-events: none;
+  opacity: 0.8;
 }
 
 .overlay {
@@ -25,7 +32,7 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 24px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 60%);
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -40,4 +47,24 @@
   color: white;
   margin: 0;
   font-size: 1.2rem;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.description {
+  color: #cccccc;
+  font-size: 0.9rem;
+  margin: 8px 0 0 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cardContainer:hover .title {
+  transform: translateY(0);
+}
+
+.cardContainer:hover .description {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -9,10 +9,10 @@ import styles from './Marquee.module.css';
 gsap.registerPlugin(useGSAP);
 
 const PROJECTS = [
-  { id: 1, title: "Project Alpha", video: "/video1.mp4" },
-  { id: 2, title: "Project Beta", video: "/video2.mp4" },
-  { id: 3, title: "Project Gamma", video: "/video3.mp4" },
-  { id: 4, title: "Project Delta", video: "/video4.mp4" },
+  { id: 1, title: "Project Alpha", description: "Awesome immersive web experience", video: "/video1.mp4" },
+  { id: 2, title: "Project Beta", description: "Interactive 3D application", video: "/video2.mp4" },
+  { id: 3, title: "Project Gamma", description: "E-commerce platform overhaul", video: "/video3.mp4" },
+  { id: 4, title: "Project Delta", description: "Mobile-first design system", video: "/video4.mp4" },
 ];
 
 export const Marquee = () => {
@@ -40,24 +40,26 @@ export const Marquee = () => {
 
     const update3D = () => {
       const windowCenterX = window.innerWidth / 2;
+      const trackRect = track.getBoundingClientRect();
+      const cylinderRadius = 500; 
 
       cards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        const cardCenterX = rect.left + rect.width / 2;
+        const cardCenterX = trackRect.left + card.offsetLeft + (card.offsetWidth / 2);
+        
         const distance = cardCenterX - windowCenterX;
-        const normalizedDistance = distance / (window.innerWidth / 2);
-        const maxRotation = 35;
-        const depth = -150;
+        const theta = distance / cylinderRadius; 
 
+        const targetX = cylinderRadius * Math.sin(theta);
+        const xOffset = targetX - distance;
+
+        const targetZ = cylinderRadius * (1 - Math.cos(theta));
         gsap.set(card, {
-          rotationY: normalizedDistance * maxRotation,
-          z: Math.abs(normalizedDistance) * depth,
-          scale: 1 - Math.abs(normalizedDistance) * 0.1,
+          x: xOffset,
+          z: targetZ,
+          rotationY: -theta * (180 / Math.PI),
         });
       });
     };
-
-    // Run the 3D calculation on every frame
     gsap.ticker.add(update3D);
 
     return () => {
@@ -70,10 +72,11 @@ export const Marquee = () => {
   return (
     <div className={styles.marqueeContainer} ref={containerRef}>
       <div className={styles.track} ref={trackRef}>
-        {[...PROJECTS, ...PROJECTS].map((project, index) => (
+        {[...PROJECTS, ...PROJECTS, ...PROJECTS].map((project, index) => (
           <ProjectCard 
             key={`${project.id}-${index}`} 
-            title={project.title} 
+            title={project.title}
+            description={project.description}
             videoSrc={project.video} 
           />
         ))}
