@@ -9,10 +9,10 @@ import styles from './Marquee.module.css';
 gsap.registerPlugin(useGSAP);
 
 const PROJECTS = [
-  { id: 1, title: "Cryptono", description: "Password manager in an extension", video: "/video1.mp4" },
-  { id: 2, title: "Portfolio", description: "This site", video: "/video2.mp4" },
-  { id: 3, title: "Github", description: "My github overview", video: "/video3.mp4" },
-  { id: 4, title: "PyScripts", description: "Combination of Python scripts", video: "/video4.mp4" },
+  { id: 1, title: "Cryptono", description: "Password manager in an extension", video: "/video1.webm", poster: "/video1.webm" },
+  { id: 2, title: "Portfolio", description: "This site", video: "/video2.webm", poster: "/video2.webm" },
+  { id: 3, title: "Github", description: "My github overview", video: "/video3.webm", poster: "/video3.webm" },
+  { id: 4, title: "PyScripts", description: "Combination of Python scripts", video: "/video4.webm", poster: "/video4.webm" },
 ];
 
 export const Marquee = () => {
