@@ -1,7 +1,6 @@
 .marqueeContainer {
   width: 100vw;
   overflow: hidden;
-  background-color: #000;
   padding: 100px 0;
   perspective: 1200px; 
   perspective-origin: center center;
