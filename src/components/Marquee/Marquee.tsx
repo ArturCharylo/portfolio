@@ -27,7 +27,7 @@ export const Marquee = () => {
 
     const tl = gsap.to(track, {
       xPercent: -50,
-      duration: 30,
+      duration: 60,
       ease: "none",
       repeat: -1,
     });

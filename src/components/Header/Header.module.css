@@ -2,5 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 1rem;
     margin-top: 5rem;
+}
+
+.title{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #d3d3d3;
+}
+
+.subtitle{
+    font-size: 1.25rem;
+    color: #a9a9a9;
 }
