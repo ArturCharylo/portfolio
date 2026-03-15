@@ -13,6 +13,13 @@
     color: #d3d3d3;
 }
 
+.titleContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
 .subtitle{
     font-size: 1.25rem;
     color: #a9a9a9;
