@@ -2,68 +2,74 @@
 
 import { useState, useEffect } from "react";
 import styles from "./Stars.module.css";
-import type { Star } from "@/app/types";
 
 const starColors = ["252, 211, 211", "115, 138, 147", "201, 193, 193"];
 
-export function GenerateStars() {
-    const [stars, setStars] = useState<Star[]>([]);
+function SingleStar({ id }: { id: number }) {
+    const [config, setConfig] = useState({
+        top: '0%',
+        left: '0%',
+        color: '255, 255, 255',
+        duration: '0s',
+        delay: '0s',
+        isReady: false
+    });
 
     useEffect(() => {
-        const generatedStars = Array.from({ length: 6 }).map((_, i) => ({
-            id: i,
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            color: starColors[Math.floor(Math.random() * starColors.length)],
-            delay: `${Math.random() * 15}s`,
-            duration: `${1 + Math.random() * 2}s`,
-        }));
-
-        setTimeout(() => {
-            setStars(generatedStars);
+        const timer = setTimeout(() => {
+            setConfig({
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                color: starColors[Math.floor(Math.random() * starColors.length)],
+                duration: `${2 + Math.random() * 4}s`,
+                delay: `${Math.random() * 15}s`,
+                isReady: true
+            });
         }, 0);
+        return () => clearTimeout(timer);
     }, []);
 
-    const handleAnimationIteration = (id: number) => {
-        setStars((prevStars) =>
-            prevStars.map((star) =>
-                star.id === id
-                    ? {
-                          ...star,
-                          top: `${Math.random() * 100}%`,
-                          left: `${Math.random() * 100}%`,
-                      }
-                    : star
-            )
-        );
+    const handleIteration = () => {
+        setConfig(prev => ({
+            ...prev,
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            duration: `${2 + Math.random() * 4}s`,
+            color: starColors[Math.floor(Math.random() * starColors.length)],
+            delay: '0s'
+        }));
     };
+
+    if (!config.isReady) return null;
 
     return (
         <>
-            {stars.length > 0 && (
-                <style>{`
-                    ${stars.map((star) => `
-                        .star-${star.id} {
-                            top: ${star.top};
-                            left: ${star.left};
-                            background-color: rgb(${star.color});
-                            box-shadow: 0 0 8px 3px rgba(${star.color}, 1);
-                            animation-duration: ${star.duration};
-                            animation-delay: ${star.delay};
-                        }
-                    `).join('')}
-                `}</style>
-            )}
-
-            <div className={styles.starsContainer}>
-                {stars.map((star) => (
-                    <div
-                        key={star.id}
-                        className={`${styles.star} star-${star.id}`}
-                        onAnimationIteration={() => handleAnimationIteration(star.id)}
-                    />
-                ))}
-            </div>
+            <style>{`
+                .star-${id} {
+                    top: ${config.top};
+                    left: ${config.left};
+                    background-color: rgb(${config.color});
+                    box-shadow: 0 0 8px 3px rgba(${config.color}, 1);
+                    animation-duration: ${config.duration};
+                    animation-delay: ${config.delay};
+                }
+            `}</style>
+            <div
+                className={`${styles.star} star-${id}`}
+                onAnimationIteration={handleIteration}
+            />
         </>
+    );
+}
+
+export function GenerateStars() {
+    const stars = Array.from({ length: 7 }).map((_, i) => i);
+
+    return (
+        <div className={styles.starsContainer}>
+            {stars.map((id) => (
+                <SingleStar key={id} id={id} />
+            ))}
+        </div>
     );
 }
