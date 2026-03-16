@@ -12,6 +12,7 @@ function SingleStar({ id }: { id: number }) {
         color: '255, 255, 255',
         duration: '0s',
         delay: '0s',
+        cycle: 0,
         isReady: false
     });
 
@@ -23,20 +24,22 @@ function SingleStar({ id }: { id: number }) {
                 color: starColors[Math.floor(Math.random() * starColors.length)],
                 duration: `${2 + Math.random() * 4}s`,
                 delay: `${Math.random() * 15}s`,
+                cycle: 1,
                 isReady: true
             });
         }, 0);
         return () => clearTimeout(timer);
     }, []);
 
-    const handleIteration = () => {
+    const handleAnimationEnd = () => {
         setConfig(prev => ({
             ...prev,
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
             duration: `${2 + Math.random() * 4}s`,
             color: starColors[Math.floor(Math.random() * starColors.length)],
-            delay: '0s'
+            delay: `${Math.random() * 3}s`,
+            cycle: prev.cycle + 1
         }));
     };
 
@@ -52,11 +55,13 @@ function SingleStar({ id }: { id: number }) {
                     box-shadow: 0 0 8px 3px rgba(${config.color}, 1);
                     animation-duration: ${config.duration};
                     animation-delay: ${config.delay};
+                    animation-iteration-count: 1; /* Ensure animation runs exactly once per mount */
                 }
             `}</style>
             <div
+                key={`${id}-${config.cycle}`}
                 className={`${styles.star} star-${id}`}
-                onAnimationIteration={handleIteration}
+                onAnimationEnd={handleAnimationEnd}
             />
         </>
     );
