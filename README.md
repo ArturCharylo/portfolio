@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Personal Portfolio
 
-## Getting Started
+A modern, interactive frontend developer portfolio built to showcase my projects, skills, and passion for web development. The focus of this project is on smooth user experience, high performance, and engaging animations.
 
-First, run the development server:
+## ✨ Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **Modern Tech Stack:** Built with Next.js 16 and React 19.
+* **Smooth Scrolling:** Implemented seamless scrolling experiences using Lenis.
+* **Advanced Animations:** Complex, performant UI animations powered by GSAP and Framer Motion.
+* **Custom Visual Effects:** Includes dynamic, optimized background effects (e.g., spontaneous CSS/JS star twinkle effects) built without heavy external canvas libraries.
+* **Fully Responsive:** Designed to look great on desktop, tablet, and mobile devices using CSS Modules.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Built With
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* [Next.js](https://nextjs.org/) (App Router)
+* [React](https://react.dev/)
+* [GSAP](https://gsap.com/)
+* [Framer Motion](https://www.framer.com/motion/)
+* [Lenis](https://lenis.studiofreight.com/)
+* CSS Modules
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Getting Started
 
-## Learn More
+To get a local copy up and running, follow these simple steps.
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Make sure you have Node.js installed. This project uses `bun` as the package manager (as indicated by the `bun.lock` file), but `npm` or `yarn` will also work.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository
+   ```bash
+   git clone https://github.com/ArturCharylo/artur-cv.git
+   ```
+2. Navigate to the project directory
+    ```bash
+    cd artur-cv
+    ```
+3. Install dependecies
+    ```bash
+    bun install
+    ```
+    > Note: Ensure you have bun installed
+4. Start the developement server:
+    ```bash
+    bun dev
+    ```
+## 📁 Project Structure
+* **/src/app** - Next.js App Router setup, global styles, and main pages.
+* **/src/components** - Reusable UI components (Header, Marquee, ProjectCard, custom background Stars).
+* **/public** - Static assets like images and icons.
