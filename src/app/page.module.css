@@ -24,7 +24,7 @@
   left: var(--line-pos);
   background: linear-gradient(to bottom, 
     transparent 0%, 
-    rgba(100, 116, 139, 0.1) 50%, 
+    rgba(100, 116, 139, 0.1) 50%,
     transparent 100%
   );
   overflow: hidden;
@@ -40,7 +40,7 @@
   left: 0;
   background: linear-gradient(to bottom, 
     transparent 0%, 
-    rgba(0, 255, 76, 0.4) 50%, 
+    rgb(255, 255, 255) 50%,
     transparent 100%
   );
   animation: drop 7s infinite ease-in-out;
