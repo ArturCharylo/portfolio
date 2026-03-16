@@ -1,26 +1,89 @@
-.header{
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 5rem;
-}
-
-.title{
-    font-size: 3rem;
-    font-weight: bold;
-    color: #d3d3d3;
-}
-
-.titleContainer{
-    display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-top: 5rem; 
+    text-align: center;
+    animation: fadeAndSlideUp 0.8s ease-out forwards; 
 }
 
-.subtitle{
+.headertext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profileImage {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #2a2a2a; 
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    left: -50px;
+}
+
+.profileImage:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    margin: 0;
+    background: linear-gradient(
+        110deg, 
+        #fcd3d3 0%, 
+        #738a93 33%, 
+        #c9c1c1 50%, 
+        #738a93 66%, 
+        #fcd3d3 100%
+    );
+    background-size: 300% auto;
+    background-position: 0% center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 1.5s ease-out;
+}
+
+.subtitle {
     font-size: 1.25rem;
-    color: #a9a9a9;
+    background: linear-gradient(
+        110deg, 
+        #daa5a5 0%, 
+        #a7ccdb 33%, 
+        #d4d4d4 50%, 
+        #a7ccdb 66%, 
+        #daa5a5 100%
+    );
+    background-size: 300% auto;
+    background-position: 0% center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+    max-width: 500px;
+    line-height: 1.6;    
+    transition: background-position 1.5s ease-out;
+}
+
+.title:hover, .subtitle:hover {
+    background-position: 100% center;
+    transition: background-position 2.5s ease-in-out;
+}
+
+@keyframes fadeAndSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
