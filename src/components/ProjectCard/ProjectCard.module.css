@@ -21,15 +21,16 @@
   border-radius: 25px;
   padding: 1px;
 
+  /* Adjusted gradient stops to start at opposite corners (45deg and 225deg) and widened the bright spots */
   background: conic-gradient(
     from var(--angle),
     #444 0deg,
-    #444 80deg,
-    #fff 90deg,
-    #444 100deg,
-    #444 260deg,
-    #fff 270deg,
-    #444 280deg,
+    #444 25deg,
+    #fff 45deg,
+    #444 65deg,
+    #444 205deg,
+    #fff 225deg,
+    #444 245deg,
     #444 360deg
   );
 
@@ -47,14 +48,14 @@
 }
 
 .cardContainer::after {
-  filter: blur(12px);
+  filter: blur(34px);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .cardContainer:hover::before,
 .cardContainer:hover::after {
-  animation: spinLight 4s linear infinite;
+  animation: spinLight 6s linear infinite;
 }
 
 .cardContainer:hover::after {
