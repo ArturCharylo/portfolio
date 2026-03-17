@@ -3,7 +3,31 @@
   flex-direction: column;
   gap: 0.5rem;
   margin: 40px auto;
-  max-width: 800px;
+  max-width: 1300px;
   text-align: center;
   padding: 0 20px;
+}
+
+.description {
+  font-size: 2rem;
+  line-height: 1.5;
+   background: linear-gradient(
+        110deg, 
+        #ffc9c2 0%, 
+        #84b0c1 33%, 
+        #d1b6b6 50%, 
+        #85aab8 66%, 
+        #ffaaaa 100%
+    );
+    background-size: 300% auto;
+    background-position: 0% center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 1.5s ease-out;
+}
+
+.description:hover {
+    background-position: 100% center;
+    transition: background-position 2.5s ease-in-out;
 }
