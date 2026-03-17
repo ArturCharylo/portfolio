@@ -13,21 +13,21 @@
   line-height: 1.5;
    background: linear-gradient(
         110deg, 
-        #ffc9c2 0%, 
-        #84b0c1 33%, 
-        #d1b6b6 50%, 
-        #85aab8 66%, 
-        #ffaaaa 100%
+        #ffb1a7 0%, 
+        #95c6da 23%, 
+        #eab0b0 45%, 
+        #88bccf 66%, 
+        #ffb1b1 100%
     );
     background-size: 300% auto;
     background-position: 0% center;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: background-position 1.5s ease-out;
+    transition: background-position 2.5s ease-out;
 }
 
 .description:hover {
     background-position: 100% center;
-    transition: background-position 2.5s ease-in-out;
+    transition: background-position 3.5s ease-in-out;
 }
