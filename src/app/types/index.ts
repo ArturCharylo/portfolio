@@ -6,3 +6,11 @@ export interface Star {
   delay: string;
   duration: string;
 }
+
+export interface ProjectCardProps {
+  title: string;
+  description: string;
+  videoSrc?: string;
+  posterSrc?: string;
+  url?: string;
+}
