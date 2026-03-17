@@ -1,7 +1,10 @@
 import styles from "./page.module.css";
+// -------------- Header imports --------------------------
+import { Header } from "@/components/Header/Header";
+// -------------- Project Section imports --------------------------
+import { ProjectIntro } from "@/components/ProjectIntro/ProjectIntro";
 import { GenerateStars } from "@/components/Stars/Stars";
 import { Marquee } from "@/components/Marquee/Marquee";
-import { Header } from "@/components/Header/Header";
 
 export default function Home() {
 
@@ -10,6 +13,7 @@ export default function Home() {
     <main className={styles.container}>
       <GenerateStars />
       <Header />
+      <ProjectIntro />
       <Marquee />
     </main>
   );

@@ -21,7 +21,6 @@
   border-radius: 25px;
   padding: 1px;
 
-  /* Adjusted gradient stops to start at opposite corners (45deg and 225deg) and widened the bright spots */
   background: conic-gradient(
     from var(--angle),
     #444 0deg,

@@ -4,7 +4,6 @@ interface ProjectCardProps {
   title: string;
   description: string;
   videoSrc?: string;
-  // Added poster prop for immediate visual feedback
   posterSrc?: string; 
 }
 
