@@ -2,7 +2,7 @@
   width: 100vw;
   overflow: hidden;
   padding: 100px 0;
-  perspective: 1200px; 
+  perspective: 600px; 
   perspective-origin: center center;
   display: flex;
   align-items: center;
