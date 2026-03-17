@@ -10,7 +10,7 @@ gsap.registerPlugin(useGSAP);
 
 const PROJECTS = [
   { id: 1, title: "Cryptono", description: "Password manager in an extension", video: "/video1.webm", poster: "/video1.webm", url: "https://github.com/ArturCharylo/Cryptono" },
-  { id: 2, title: "Portfolio", description: "This site", video: "/video2.webm", poster: "/video2.webm", url: "https://github.com/ArturCharylo/artur-cv" },
+  { id: 2, title: "Portfolio", description: "This site", video: "/video2.webm", poster: "/video2.webm", url: "https://github.com/ArturCharylo/portfolio" },
   { id: 3, title: "Github", description: "My github overview", video: "/video3.webm", poster: "/video3.webm", url: "https://github.com/ArturCharylo" },
   { id: 4, title: "PyScripts", description: "Combination of Python scripts", video: "/video4.webm", poster: "/video4.webm", url: "https://github.com/ArturCharylo/Python_projects" },
 ];
