@@ -1,7 +1,7 @@
 .about{
     font-size: 1.2rem;
     line-height: 1.5;
-    font-size: 2rem;
+    font-size: 1.825rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -9,4 +9,28 @@
     text-align: center;
     max-width: 1300px;
     margin-bottom: 4rem;
+}
+
+.description {
+  font-size: 2rem;
+  line-height: 1.5;
+   background: linear-gradient(
+        110deg, 
+        #c0c0c0 0%, 
+        #c1b9b9 23%, 
+        #a5a4a4 45%, 
+        #dad3d3 66%, 
+        #b0b0b0 100%
+    );
+    background-size: 300% auto;
+    background-position: 0% center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 3.5s ease-out;
+}
+
+.description:hover {
+    background-position: 100% center;
+    transition: background-position 3.5s ease-in-out;
 }
