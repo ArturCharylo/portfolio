@@ -10,11 +10,10 @@ import { About } from "@/components/About/About";
 
 export default function Home() {
 
-
   return (
-    <main className={styles.container}>
+    <main className={`${styles.container} mesh-gradient-bg`}>
       <GenerateStars />
-      <Header />
+      <Header />   
       <ProjectIntro />
       <Marquee />
       <About />

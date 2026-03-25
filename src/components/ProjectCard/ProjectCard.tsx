@@ -17,9 +17,14 @@ export const ProjectCard = ({ title, description, videoSrc, posterSrc, url }: Pr
             playsInline
             preload="metadata" 
           />
-          <div className={styles.overlay}>
-            <h3 className={styles.title}>{title}</h3>
-            <p className={styles.description}>{description}</p>
+          <div className={`${styles.overlay} glass-card`}>
+            <div className={styles.contentWrapper}>
+              <div className={styles.textContent}>
+                <h3 className={styles.title}>{title}</h3>
+                <p className={styles.description}>{description}</p>
+              </div>
+              <span className={styles.exploreBadge}>Explore</span>
+            </div>
           </div>
         </div>
       </Link>
