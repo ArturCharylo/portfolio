@@ -21,7 +21,7 @@
 }
 
 .accentText {
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-family: var(--font-body);
   color: var(--primary);
   text-transform: uppercase;
