@@ -7,6 +7,7 @@ import { GenerateStars } from "@/components/Stars/Stars";
 import { Marquee } from "@/components/Marquee/Marquee";
 // -------------- About imports --------------------------
 import { About } from "@/components/About/About";
+import { SkillCard } from "@/components/About/SkillCards/SkillCard";
 
 export default function Home() {
 
@@ -17,6 +18,7 @@ export default function Home() {
       <ProjectIntro />
       <Marquee />
       <About />
+      <SkillCard />
     </main>
   );
 }
