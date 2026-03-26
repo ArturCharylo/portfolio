@@ -2,7 +2,6 @@
 .section {
   position: relative;
   padding: 10rem 0;
-  background: #000;
   overflow: hidden;
 }
 
@@ -10,28 +9,6 @@
   max-width: 1720px;
   margin: 0 auto;
   padding: 0 3rem;
-}
-
-/* ─── Background blobs ───────────────────────────────────────── */
-.blob {
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  filter: blur(180px);
-  pointer-events: none;
-}
-
-.blobTopRight {
-  top: -24rem;
-  right: -24rem;
-  background: rgba(219, 144, 255, 0.05);
-}
-
-.blobBottomLeft {
-  bottom: -24rem;
-  left: -24rem;
-  background: rgba(0, 210, 255, 0.05);
 }
 
 /* ─── Section header ─────────────────────────────────────────── */
@@ -43,7 +20,7 @@
 .eyebrow {
   display: block;
   font-family: "Manrope", sans-serif;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: 900;
   letter-spacing: 0.5em;
   text-transform: uppercase;
@@ -364,3 +341,8 @@
   margin: 0;
   max-width: 580px;
 }
+
+/* ─── Neural — animation delays ──────────────────────────────── */
+.delay1 { animation-delay: 0.1s; }
+.delay2 { animation-delay: 0.3s; }
+.delay3 { animation-delay: 0.5s; }

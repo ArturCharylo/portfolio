@@ -40,18 +40,7 @@ export const About = () => {
             </p>
 
             <div className={styles.skills}>
-                <SkillCard
-                    title="React"
-                    description=''
-                />
-                <SkillCard
-                    title="TypeScript"
-                    description=''
-                />
-                <SkillCard
-                    title="CSS Modules"
-                    description=''
-                />
+                <SkillCard />
             </div>
         </div>
     );
