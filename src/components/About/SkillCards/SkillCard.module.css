@@ -62,9 +62,11 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  /* Promote card to its own compositor layer — isolates repaints */
+  will-change: transform;
+  /* box-shadow removed from transition — it causes repaints */
   transition: border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* top shimmer line */
@@ -82,27 +84,50 @@
   transform: translateY(-6px);
 }
 
-/* per-card accent colors on hover */
+/* Pseudo-element overlay replaces box-shadow — opacity is compositor-only, no repaint */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+/* per-card accent colors */
 .card--visual:hover {
   border-color: rgba(219, 144, 255, 0.3);
+}
+.card--visual::after {
   box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.9),
     0 0 24px rgba(219, 144, 255, 0.06);
 }
 
 .card--structural:hover {
   border-color: rgba(0, 210, 255, 0.3);
+}
+.card--structural::after {
   box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.9),
     0 0 24px rgba(0, 210, 255, 0.06);
 }
 
 .card--motion:hover {
   border-color: rgba(255, 106, 159, 0.3);
+}
+.card--motion::after {
   box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.9),
     0 0 24px rgba(255, 106, 159, 0.06);
 }
 
 .card--neural:hover {
   border-color: rgba(255, 255, 255, 0.15);
+}
+.card--neural::after {
   box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.9),
     0 0 24px rgba(255, 255, 255, 0.04);
 }
@@ -118,6 +143,8 @@
   margin-bottom: 4rem;
   position: relative;
   flex-shrink: 0;
+  /* Isolate the blur descendants into their own layer */
+  isolation: isolate;
 }
 
 /* ─── Shared illustration scaffold ──────────────────────────── */
@@ -137,18 +164,25 @@
   border-radius: 50%;
   filter: blur(80px);
   pointer-events: none;
+  /* GPU-promote so blur renders on compositor thread */
+  will-change: opacity;
   transition: opacity 0.8s ease;
+  /* Use opacity only — never change background on hover */
 }
 
-.glowPrimary   { background: rgba(219, 144, 255, 0.08); }
-.glowSecondary { background: rgba(0, 210, 255, 0.08); }
-.glowTertiary  { background: rgba(255, 106, 159, 0.08); }
-.glowNeutral   { background: rgba(255, 255, 255, 0.06); }
+/* Bake the hover color into the initial background, just toggle opacity */
+.glowPrimary   { background: rgba(219, 144, 255, 0.14); opacity: 0.57; }
+.glowSecondary { background: rgba(0, 210, 255, 0.14);   opacity: 0.57; }
+.glowTertiary  { background: rgba(255, 106, 159, 0.14); opacity: 0.57; }
+.glowNeutral   { background: rgba(255, 255, 255, 0.1);  opacity: 0.6; }
 
-.card:hover .glowPrimary   { opacity: 1.5; background: rgba(219, 144, 255, 0.14); }
-.card:hover .glowSecondary { opacity: 1.5; background: rgba(0, 210, 255, 0.14); }
-.card:hover .glowTertiary  { opacity: 1.5; background: rgba(255, 106, 159, 0.14); }
-.card:hover .glowNeutral   { opacity: 1.5; background: rgba(255, 255, 255, 0.1); }
+/* On hover just raise opacity — no background change, no repaint */
+.card:hover .glowPrimary,
+.card:hover .glowSecondary,
+.card:hover .glowTertiary,
+.card:hover .glowNeutral {
+  opacity: 1;
+}
 
 /* ─── Visual — floating discs ────────────────────────────────── */
 @keyframes float {
@@ -173,6 +207,8 @@
   border-radius: 999px;
   animation: float 6s ease-in-out infinite;
   border: 1px solid rgba(219, 144, 255, 0.4);
+  /* Each disc on its own layer so animation doesn't repaint siblings */
+  will-change: transform;
 }
 
 .disc1 { width: 6rem;  height: 0.5rem; background: rgba(219, 144, 255, 0.2); animation-delay: 0s; box-shadow: 0 0 20px rgba(219, 144, 255, 0.2); }
@@ -200,6 +236,7 @@
   inset: 0;
   border: 2px solid rgba(0, 210, 255, 0.2);
   animation: spinSlow 15s linear infinite;
+  will-change: transform;
   transition: transform 0.8s ease;
 }
 
@@ -208,6 +245,7 @@
   height: 6rem;
   background: linear-gradient(135deg, rgba(0, 210, 255, 0.8), rgba(0, 210, 255, 0.1));
   box-shadow: 0 0 50px rgba(0, 210, 255, 0.4);
+  will-change: transform;
   transition: transform 0.8s ease;
 }
 
@@ -249,6 +287,7 @@
   position: absolute;
   border-radius: 50%;
   border: 1.5px solid rgba(255, 106, 159, 0.2);
+  will-change: transform;
 }
 
 .orbitRingLarge {
@@ -271,6 +310,7 @@
   border-radius: 50%;
   background: #ff6a9f;
   box-shadow: 0 0 40px rgba(255, 106, 159, 0.7);
+  will-change: transform;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -294,14 +334,28 @@
   width: 1.5rem;
   border-radius: 999px;
   animation: pulse 2s ease-in-out infinite;
-  transition: background 0.5s ease, height 0.5s ease;
+  will-change: opacity;
+  /* Remove height/background from transition — only compositor-safe props */
+  transition: opacity 0.5s ease;
 }
 
 .barShort { height: 3rem; background: rgba(255, 255, 255, 0.2); }
 .barTall  { height: 5rem; background: rgba(255, 255, 255, 0.4); }
 
-.card--neural:hover .barShort { background: rgba(255, 255, 255, 0.4); }
-.card--neural:hover .barTall  { background: rgba(255, 255, 255, 0.8); }
+/* Swap background via separate pseudo-element so the transition is opacity-only */
+.bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.barShort::after { background: rgba(255, 255, 255, 0.4); }
+.barTall::after  { background: rgba(255, 255, 255, 0.8); }
+
+.card--neural:hover .bar::after { opacity: 1; }
 
 /* ─── Card text ──────────────────────────────────────────────── */
 .cardBody {
