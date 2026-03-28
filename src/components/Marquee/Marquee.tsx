@@ -16,7 +16,7 @@ const PROJECTS = [
 ];
 
 // Moved outside component — stable reference, never recreated
-const RENDER_PROJECTS = [...PROJECTS, ...PROJECTS, ...PROJECTS, ...PROJECTS];
+const RENDER_PROJECTS = [...PROJECTS, ...PROJECTS];
 
 export const Marquee = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,17 +26,23 @@ export const Marquee = () => {
     if (!trackRef.current || !containerRef.current) return;
 
     const track = trackRef.current;
-    const cards = gsap.utils.toArray('.js-card', containerRef.current) as HTMLElement[];
     const cylinderRadius = 1000;
 
-    // Cache card layout once — avoids per-frame reflows
-    const cardCache = cards.map((card) => ({
-      el: card,
-      centerOffset: card.offsetLeft + card.offsetWidth / 2,
-    }));
-    const trackWidth = track.scrollWidth;
+    let cardCache: { el: HTMLElement; centerOffset: number }[] = [];
+    let trackWidth = 0;
 
-    const tl = gsap.to(track, {
+    const updateCache = () => {
+      if (!trackRef.current || !containerRef.current) return;
+      const cards = gsap.utils.toArray('.js-card', containerRef.current) as HTMLElement[];
+      cardCache = cards.map((card) => ({
+        el: card,
+        centerOffset: card.offsetLeft + card.offsetWidth / 2,
+      }));
+      trackWidth = trackRef.current.scrollWidth;
+    };
+    updateCache(); // initial
+
+    const tl = gsap.to(trackRef.current, {
       xPercent: -50,
       duration: 60,
       ease: "none",
@@ -49,9 +55,8 @@ export const Marquee = () => {
     track.addEventListener('mouseleave', hoverOut);
 
     const update3D = () => {
+      if (!trackRef.current) return;
       const windowCenterX = window.innerWidth / 2;
-
-      // Derive track's current x from tween progress — no getBoundingClientRect()
       const progress = tl.progress();
       const trackX = -(progress * trackWidth * 0.5);
 
@@ -59,7 +64,6 @@ export const Marquee = () => {
         const cardCenterX = trackX + centerOffset;
         const distance = cardCenterX - windowCenterX;
         const theta = distance / cylinderRadius;
-
         const targetX = cylinderRadius * Math.sin(theta);
         const xOffset = targetX - distance;
         const targetZ = cylinderRadius * (1 - Math.cos(theta));
@@ -72,12 +76,41 @@ export const Marquee = () => {
       });
     };
 
+    const handleResize = () => {
+      updateCache();
+      // Force an immediate update to avoid a jump
+      update3D();
+    };
+    window.addEventListener('resize', handleResize);
+
     gsap.ticker.add(update3D);
+    let isVisible = true;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const nowVisible = entry.isIntersecting;
+          if (nowVisible === isVisible) return;
+          isVisible = nowVisible;
+
+          if (isVisible) {
+            tl.play();
+            gsap.ticker.add(update3D);
+          } else {
+            tl.pause();
+            gsap.ticker.remove(update3D);
+          }
+        });
+      },
+      { threshold: 0.1 } // trigger when at least 10% visible
+    );
+    observer.observe(containerRef.current);
+
 
     return () => {
       track.removeEventListener('mouseenter', hoverIn);
       track.removeEventListener('mouseleave', hoverOut);
       gsap.ticker.remove(update3D);
+      window.removeEventListener('resize', handleResize);
     };
   }, { scope: containerRef });
 

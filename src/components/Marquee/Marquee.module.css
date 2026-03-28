@@ -20,4 +20,5 @@
 /* Promote each card to its own compositor layer */
 .track > * {
   will-change: transform;
+  backface-visibility: hidden;
 }
