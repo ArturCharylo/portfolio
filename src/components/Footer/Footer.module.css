@@ -1,25 +1,16 @@
-/* ─────────────────────────────────────────
-   Footer.module.css
-   Slide-up portfolio footer — no Tailwind
-   ───────────────────────────────────────── */
 
-/* ── CSS custom properties (matches your existing palette) ── */
 .footer {
-  /* ── Slide-up positioning ── */
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 0;           /* page content must sit above this (z-index ≥ 1) */
+  z-index: 0;
   will-change: transform;
-
-  background: var(--color-black);
   border-top: 1px solid var(--color-border);
   overflow: hidden;
   padding: 5rem 0 2.5rem;
 }
 
-/* ── Ambient glow blobs ── */
 .glowTop {
   position: absolute;
   top: 0;
@@ -27,7 +18,6 @@
   transform: translateX(-50%);
   width: min(900px, 100%);
   height: 280px;
-  background: radial-gradient(ellipse at top, rgba(var(--primary-rgb), 0.07) 0%, transparent 70%);
   filter: blur(40px);
   pointer-events: none;
 }
@@ -38,7 +28,6 @@
   right: 0;
   width: 480px;
   height: 260px;
-  background: radial-gradient(ellipse at bottom right, rgba(var(--secondary-rgb), 0.05) 0%, transparent 70%);
   filter: blur(60px);
   pointer-events: none;
 }
