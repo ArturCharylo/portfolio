@@ -10,6 +10,8 @@ import { GenerateStars } from "@/components/Stars/Stars";
 import { Marquee } from "@/components/Marquee/Marquee";
 // -------------- About imports --------------------------
 import { About } from "@/components/About/About";
+// -------------- Footer imports --------------------------
+import { Footer } from "@/components/Footer/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -27,6 +29,7 @@ export default function Home() {
       <ProjectIntro />
       <Marquee />
       <About />
+      <Footer />
     </main>
   );
 }
