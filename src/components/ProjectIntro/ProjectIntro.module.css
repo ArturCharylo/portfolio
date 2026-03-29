@@ -11,14 +11,7 @@
 .description {
   font-size: 3rem;
   line-height: 1.5;
-   background: linear-gradient(
-        110deg, 
-        #ffb1a7 0%, 
-        #95c6da 23%, 
-        #eab0b0 45%, 
-        #88bccf 66%, 
-        #ffb1b1 100%
-    );
+   background: var(--gradient-project-intro);
     background-size: 300% auto;
     background-position: 0% center;
     background-clip: text;

@@ -3,13 +3,13 @@
 import { useState, useEffect } from "react";
 import styles from "./Stars.module.css";
 
-const starColors = ["252, 211, 211", "115, 138, 147", "201, 193, 193"];
+const starColors = ["var(--primary-rgb)", "var(--secondary-rgb)", "var(--tertiary-rgb)", "var(--color-white-rgb)"];
 
 function SingleStar({ id }: { id: number }) {
     const [config, setConfig] = useState({
         top: '0%',
         left: '0%',
-        color: '255, 255, 255',
+        color: 'var(--color-white-rgb)',
         duration: '0s',
         delay: '0s',
         cycle: 0,
