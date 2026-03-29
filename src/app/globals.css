@@ -11,6 +11,32 @@
   --secondary: #00d2ff;
   --tertiary: #ff6a9f;
   
+  /* Primary colors RGB */
+  --primary-rgb: 219, 144, 255;
+  --secondary-rgb: 0, 210, 255;
+  --tertiary-rgb: 255, 106, 159;
+
+  /* Other base colors */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-white-rgb: 255, 255, 255;
+  --color-black-rgb: 0, 0, 0;
+
+  --color-gray-dark: #1a1a1a;
+  --color-gray-mid: #2a2a2a;
+  --color-gray-light: #444444;
+  --color-gray-text: #cccccc;
+
+  --color-muted: #adaaaa;
+  --color-muted-dim: rgba(173, 170, 170, 0.45);
+  --color-border: rgba(255, 255, 255, 0.05);
+
+  /* Gradients */
+  --gradient-about: linear-gradient(110deg, #c0c0c0 0%, #c1b9b9 23%, #a5a4a4 45%, #dad3d3 66%, #b0b0b0 100%);
+  --gradient-header-title: linear-gradient(110deg, #fcd3d3 0%, #738a93 33%, #c9c1c1 50%, #738a93 66%, #fcd3d3 100%);
+  --gradient-header-subtitle: linear-gradient(110deg, #daa5a5 0%, #a7ccdb 33%, #d4d4d4 50%, #a7ccdb 66%, #daa5a5 100%);
+  --gradient-project-intro: linear-gradient(110deg, #ffb1a7 0%, #95c6da 23%, #eab0b0 45%, #88bccf 66%, #ffb1b1 100%);
+
   --font-headline: 'Space Grotesk', sans-serif;
   --font-body: 'Manrope', sans-serif;
 }
@@ -51,5 +77,5 @@ a {
   background: rgba(26, 25, 25, 0.4);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
 }
