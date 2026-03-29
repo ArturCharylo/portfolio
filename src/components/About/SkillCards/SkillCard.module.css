@@ -72,7 +72,6 @@
 /* top shimmer line */
 .card::before {
   content: "";
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -345,7 +344,6 @@
 /* Swap background via separate pseudo-element so the transition is opacity-only */
 .bar::after {
   content: "";
-  position: absolute;
   inset: 0;
   border-radius: inherit;
   opacity: 0;
