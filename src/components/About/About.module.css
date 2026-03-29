@@ -19,14 +19,7 @@
 .description {
     font-size: 3rem;
     line-height: 1.5;
-    background: linear-gradient(
-        110deg,
-        #c0c0c0 0%,
-        #c1b9b9 23%,
-        #a5a4a4 45%,
-        #dad3d3 66%,
-        #b0b0b0 100%
-    );
+    background: var(--gradient-about);
     background-size: 300% auto;
     background-position: 0% center;
     background-clip: text;

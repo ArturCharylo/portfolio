@@ -23,22 +23,22 @@
 
   background: conic-gradient(
     from var(--angle),
-    #444 0deg,
-    #444 25deg,
-    #fff 45deg,
-    #444 65deg,
-    #444 205deg,
-    #fff 225deg,
-    #444 245deg,
-    #444 360deg
+    var(--color-gray-light) 0deg,
+    var(--color-gray-light) 25deg,
+    var(--color-white) 45deg,
+    var(--color-gray-light) 65deg,
+    var(--color-gray-light) 205deg,
+    var(--color-white) 225deg,
+    var(--color-gray-light) 245deg,
+    var(--color-gray-light) 360deg
   );
 
   -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
+    linear-gradient(var(--color-white) 0 0) content-box,
+    linear-gradient(var(--color-white) 0 0);
   mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
+    linear-gradient(var(--color-white) 0 0) content-box,
+    linear-gradient(var(--color-white) 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
           
@@ -72,7 +72,7 @@
   height: 100%;
   position: absolute;
   inset: 0;
-  background: #1a1a1a;
+  background: var(--color-gray-dark);
   overflow: clip;
   border-radius: 24px;
   backface-visibility: hidden;
@@ -83,7 +83,7 @@
 
 .cardContainer:hover .cardInner {
   transform: translateZ(80px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+  box-shadow: 0 30px 60px rgba(var(--color-black-rgb), 0.8);
 }
 
 .videoBg {
@@ -103,7 +103,7 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 24px;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 70%);
+  background: linear-gradient(to top, rgba(var(--color-black-rgb), 0.9), transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -126,7 +126,7 @@
 }
 
 .title {
-  color: white;
+  color: var(--color-white);
   margin: 0;
   font-size: 1.5rem;
   transform: translateY(10px);
@@ -134,7 +134,7 @@
 }
 
 .description {
-  color: #cccccc;
+  color: var(--color-gray-text);
   font-size: 1.3rem;
   margin: 8px 0 0 0;
   opacity: 0;
