@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import styles from "./Footer.module.css";
 
 const NAV_LINKS = ["Work", "Expertise", "About", "Contact"];
-const SOCIAL_LINKS = ["LinkedIn", "LeetCode", "GitHub", "Read.cv"];
+const SOCIAL_LINKS = [["LinkedIn", "https://www.linkedin.com/in/artur-charylo"], ["LeetCode", "https://leetcode.com/u/arturcharylo/"], ["GitHub", "https://github.com/arturcharylo"]];
 
 export function Footer() {
   const footerRef = useRef<HTMLElement>(null);
@@ -49,7 +49,6 @@ export function Footer() {
 
   return (
     <>
-      {/* Spacer lives inside your page's content flow — mount this alongside Footer */}
       <div ref={spacerRef} aria-hidden="true" />
 
       <footer ref={footerRef} className={styles.footer}>
@@ -117,8 +116,10 @@ export function Footer() {
               <h3 className={styles.linkGroupHeading}>Social</h3>
               <ul className={styles.linkList}>
                 {SOCIAL_LINKS.map((l) => (
-                  <li key={l}>
-                    <a href="#" className={`${styles.link} ${styles.linkCyan}`}>{l}</a>
+                  <li key={l[0]}>
+                    <a href={l[1]} className={`${styles.link} ${styles.linkCyan}`} target="_blank" rel="noopener noreferrer">
+                      {l[0]}
+                    </a>
                   </li>
                 ))}
               </ul>
