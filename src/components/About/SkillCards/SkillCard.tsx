@@ -68,9 +68,9 @@ export function SkillCard() {
       <div className={styles.inner}>
         {/* Section header */}
         <div className={styles.header}>
-          <span className={styles.eyebrow}>Proprietary Expertise</span>
+          <h2 className={styles.eyebrow}>Proprietary Expertise</h2>
           <h2 className={styles.heading}>
-            Modernist<br />Architecture
+            Modernist Architecture
           </h2>
         </div>
 

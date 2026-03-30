@@ -68,7 +68,7 @@ function SingleStar({ id }: { id: number }) {
 }
 
 export function GenerateStars() {
-    const stars = Array.from({ length: 7 }).map((_, i) => i);
+    const stars = Array.from({ length: 9 }).map((_, i) => i);
 
     return (
         <div className={styles.starsContainer}>

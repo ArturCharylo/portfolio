@@ -51,7 +51,7 @@
 .ctaEyebrow {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.5em;
   text-transform: uppercase;
@@ -62,7 +62,7 @@
 .ctaHeadline {
   font-family: var(--font-headline);
   font-weight: 900;
-  font-size: clamp(3rem, 9vw, 8.5rem);
+  font-size: clamp(1.25rem, 8vw, 5.5rem);
   line-height: 0.85;
   letter-spacing: -0.04em;
   text-transform: uppercase;
