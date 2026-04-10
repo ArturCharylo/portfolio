@@ -84,7 +84,7 @@ export const ProjectTimeline = ({ projects }: ProjectTimelineProps) => {
         <div className={styles.timelineLineProgress} ref={lineProgressRef}></div>
       </div>
 
-      {projects.map((project, index) => (
+      {projects.map((project) => (
         <div key={project.id} className={`${styles.timelineItem} js-timeline-item`}>
           <div className={`${styles.timelineNode} js-timeline-node`}></div>
           <div className={styles.timelineContent}>
