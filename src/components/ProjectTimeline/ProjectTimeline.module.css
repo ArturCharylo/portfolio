@@ -1,0 +1,173 @@
+.timelineContainer {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The vertical line in the middle */
+.timelineLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--color-gray-dark);
+  transform: translateX(-50%);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.timelineLineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%; /* Animated by GSAP */
+  background: var(--gradient-header-title);
+  border-radius: 2px;
+}
+
+.timelineItem {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50%;
+  position: relative;
+  margin-bottom: 6rem;
+  width: 100%;
+}
+
+.timelineItem:nth-child(even) {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 50%;
+}
+
+/* The circle node on the timeline */
+.timelineNode {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-gray-dark);
+  border: 4px solid var(--primary);
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.5);
+}
+
+.timelineContent {
+  width: 90%;
+  padding: 0 2rem;
+  position: relative;
+}
+
+/* For right alignment of left items */
+.timelineItem:nth-child(odd) .timelineContent {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.timelineItem:nth-child(even) .timelineContent {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.timelineRole {
+  font-family: var(--font-headline);
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.timelineTitle {
+  font-family: var(--font-headline);
+  font-size: 2.5rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.timelineDescription {
+  color: var(--color-gray-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+.mediaContainer {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  border: 1px solid var(--color-border);
+}
+
+.mediaContainer video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.timelineLink {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  border-radius: 9999px;
+  font-family: var(--font-headline);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timelineLink:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-gray-text);
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .timelineLine {
+    left: 2rem;
+  }
+
+  .timelineItem {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 2rem;
+  }
+
+  .timelineItem:nth-child(even) {
+    padding-left: 2rem;
+  }
+
+  .timelineNode {
+    left: 2rem;
+  }
+
+  .timelineContent {
+    width: 100%;
+    padding: 0 0 0 2rem;
+  }
+
+  .timelineItem:nth-child(odd) .timelineContent,
+  .timelineItem:nth-child(even) .timelineContent {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
