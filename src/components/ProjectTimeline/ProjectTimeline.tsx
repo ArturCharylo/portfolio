@@ -92,20 +92,6 @@ export const ProjectTimeline = ({ projects }: ProjectTimelineProps) => {
             <h2 className={styles.timelineTitle}>{project.title}</h2>
             <p className={styles.timelineDescription}>{project.description}</p>
 
-            {project.videoSrc && (
-              <div className={styles.mediaContainer}>
-                <video
-                  src={project.videoSrc}
-                  poster={project.posterSrc}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                />
-              </div>
-            )}
-
             {project.url && (
               <Link href={project.url} className={styles.timelineLink} target='_blank' rel="noopener noreferrer">
                 View Project

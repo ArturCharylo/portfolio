@@ -49,6 +49,7 @@ export default function Projects() {
             </div>
 
             <ProjectTimeline projects={PROJECTS} />
+            <p className={styles.bottomText}>More projects coming soon...</p>
         </div>
     );
 }

@@ -1,8 +1,9 @@
 .timelineContainer {
   position: relative;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 4rem 0;
   display: flex;
   flex-direction: column;
 }
@@ -61,8 +62,8 @@
 }
 
 .timelineContent {
-  width: 90%;
-  padding: 0 2rem;
+  width: 100%;
+  padding: 0 1.5rem;
   position: relative;
 }
 
@@ -103,23 +104,6 @@
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  max-width: 500px;
-}
-
-.mediaContainer {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  position: relative;
-  border: 1px solid var(--color-border);
-}
-
-.mediaContainer video {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .timelineLink {
