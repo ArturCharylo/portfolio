@@ -125,6 +125,19 @@
   opacity: 1;
 }
 
+.role {
+  color: var(--primary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 .title {
   color: var(--color-white);
   margin: 0;
@@ -140,6 +153,11 @@
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cardContainer:hover .role {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cardContainer:hover .title {

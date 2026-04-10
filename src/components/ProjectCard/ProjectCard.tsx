@@ -2,7 +2,7 @@ import styles from './ProjectCard.module.css';
 import Link from 'next/link';
 import type { ProjectCardProps } from '@/app/types';
 
-export const ProjectCard = ({ title, description, videoSrc, posterSrc, url }: ProjectCardProps) => {
+export const ProjectCard = ({ title, description, role, videoSrc, posterSrc, url }: ProjectCardProps) => {
   return (
     <div className={`${styles.cardContainer} js-card`}>
       <Link href={`${url}`} className={styles.linkOverlay} aria-label={`View details about ${title}`} target='_blank'>
@@ -20,6 +20,7 @@ export const ProjectCard = ({ title, description, videoSrc, posterSrc, url }: Pr
           <div className={`${styles.overlay} glass-card`}>
             <div className={styles.contentWrapper}>
               <div className={styles.textContent}>
+                {role && <span className={styles.role}>{role}</span>}
                 <h3 className={styles.title}>{title}</h3>
                 <p className={styles.description}>{description}</p>
               </div>

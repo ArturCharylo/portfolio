@@ -10,6 +10,7 @@ export interface Star {
 export interface ProjectCardProps {
   title: string;
   description: string;
+  role?: string;
   videoSrc?: string;
   posterSrc?: string;
   url?: string;

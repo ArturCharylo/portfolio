@@ -7,7 +7,7 @@ import { Header } from "@/components/Header/Header";
 // -------------- Project Section imports --------------------------
 import { ProjectIntro } from "@/components/ProjectIntro/ProjectIntro";
 import { GenerateStars } from "@/components/Stars/Stars";
-import { Marquee } from "@/components/Marquee/Marquee";
+import { Timeline } from "@/components/Timeline/Timeline";
 // -------------- About imports --------------------------
 import { About } from "@/components/About/About";
 // -------------- Footer imports --------------------------
@@ -27,7 +27,7 @@ export default function Home() {
       <GenerateStars />
       <Header />   
       <ProjectIntro />
-      <Marquee />
+      <Timeline />
       <About />
       <Footer />
     </main>
