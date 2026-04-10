@@ -1,29 +1,54 @@
 import styles from './projects.module.css';
-import Image from 'next/image';
+import { ProjectTimeline, TimelineProject } from '@/components/ProjectTimeline/ProjectTimeline';
 
-const PROJECTS = [
-    { id: 1, name: "Project 1", desc: "Description for Project 1", url:"", img: "/project1.png" },
-    { id: 2, name: "Project 2", desc: "Description for Project 2", url: "", img: "/project2.png" },
-    { id: 3, name: "Project 3", desc: "Description for Project 3", url: "", img: "/project3.png" }
-]; // Example project data
+const PROJECTS: TimelineProject[] = [
+    {
+        id: 1,
+        title: "Cryptono",
+        role: "Full Stack Developer",
+        description: "A secure password manager built as a browser extension. Focused on strong encryption, seamless auto-fill capabilities, and a minimal, user-friendly interface to manage digital credentials securely.",
+        videoSrc: "/video1.webm",
+        posterSrc: "/video1.webm",
+        url: "https://github.com/ArturCharylo/Cryptono"
+    },
+    {
+        id: 2,
+        title: "Portfolio",
+        role: "Frontend Developer",
+        description: "This very site. Designed and built to showcase my web development skills. It features smooth scrolling, complex GSAP animations, and a responsive layout using modern React and Next.js.",
+        videoSrc: "/video2.webm",
+        posterSrc: "/video2.webm",
+        url: "https://github.com/ArturCharylo/artur-cv"
+    },
+    {
+        id: 3,
+        title: "Github Overview",
+        role: "Software Engineer",
+        description: "An overview of my open-source contributions and personal projects hosted on GitHub, reflecting my ongoing learning and development journey.",
+        videoSrc: "/video3.webm",
+        posterSrc: "/video3.webm",
+        url: "https://github.com/ArturCharylo"
+    },
+    {
+        id: 4,
+        title: "PyScripts",
+        role: "Python Developer",
+        description: "A combination of various Python scripts tackling different problems, from web scraping and data processing to automation and mini-games.",
+        videoSrc: "/video4.webm",
+        posterSrc: "/video4.webm",
+        url: "https://github.com/ArturCharylo/Python_projects"
+    }
+];
 
 export default function Projects() {
-
     return (
         <div className={styles.container}>
-            <h1>Projects Page</h1>
-            <p>This is where the projects will be listed.</p>
-            {PROJECTS.map((project, index) => (
-                <div key={index} className={styles.projectCard}>
-                    <h2>{project.name}</h2>
-                    <p>{project.desc}</p>
-                    <a href={project.url} target="_blank" rel="noopener noreferrer">
-                        View Project
-                    </a>
-                    <Image src={project.img} width={200} height={150} alt={project.name} />
-                </div>
-            ))}
+            <div className={styles.header}>
+                <h1>My Projects</h1>
+                <p>A timeline of my selected works and experiences.</p>
+            </div>
 
+            <ProjectTimeline projects={PROJECTS} />
         </div>
     );
 }
