@@ -37,7 +37,7 @@ export const About = () => {
             className={`${styles.about} ${isVisible ? styles.visible : styles.hidden}`}
         >
             <Link href="/projects" className={styles.viewAllLink}>
-                <span className={styles.viewAllLinkText}>View All Projects</span>
+                <span className={styles.viewAllLinkText}>See my experience</span>
                 <svg
                     className={styles.ctaArrow}
                     viewBox="0 0 24 24"
