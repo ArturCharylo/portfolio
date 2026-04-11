@@ -37,6 +37,13 @@
   --gradient-header-subtitle: linear-gradient(110deg, #daa5a5 0%, #a7ccdb 33%, #d4d4d4 50%, #a7ccdb 66%, #daa5a5 100%);
   --gradient-project-intro: linear-gradient(110deg, #ffb1a7 0%, #95c6da 23%, #eab0b0 45%, #88bccf 66%, #ffb1b1 100%);
 
+  /* Navbar */
+  --nav-bg: rgba(14, 14, 14, 0.65);
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --nav-border-hover: rgba(0, 210, 255, 0.5);
+  --nav-blur: 12px;
+  --nav-text-glow: 0 0 10px rgba(0, 210, 255, 0.7);
+
   --font-headline: 'Space Grotesk', sans-serif;
   --font-body: 'Manrope', sans-serif;
 }
