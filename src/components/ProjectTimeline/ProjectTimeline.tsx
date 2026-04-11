@@ -47,7 +47,7 @@ export const ProjectTimeline = ({ projects }: ProjectTimelineProps) => {
     items.forEach((item, index) => {
       // Determine if item is on the left or right (odd vs even in CSS, 0-indexed here)
       const isLeft = index % 2 === 0;
-      const xOffset = isLeft ? -50 : 50;
+      const xOffset = isLeft ? -100 : 100;
 
       gsap.from(item, {
         opacity: 0,
@@ -56,8 +56,9 @@ export const ProjectTimeline = ({ projects }: ProjectTimelineProps) => {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: item,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
+          start: 'top 75%',
+          end: 'top 15%',
+          toggleActions: 'play reverse play reverse',
         },
       });
 
@@ -66,11 +67,12 @@ export const ProjectTimeline = ({ projects }: ProjectTimelineProps) => {
       if (node) {
         gsap.to(node, {
           borderColor: 'var(--secondary)',
+          backgroundColor: 'var(--secondary)',
           boxShadow: '0 0 15px rgba(var(--secondary-rgb), 0.8)',
           scrollTrigger: {
             trigger: item,
-            start: 'top 60%',
-            toggleActions: 'play none none reverse',
+            start: 'top 65%',
+            toggleActions: 'play reverse play reverse',
           },
         });
       }
