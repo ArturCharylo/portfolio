@@ -8,7 +8,7 @@
   --foreground-variant: #adaaaa;
   
   --primary: #db90ff;
-  --secondary: #00d2ff;
+  --secondary: #500081;
   --tertiary: #ff6a9f;
   
   /* Primary colors RGB */
@@ -40,9 +40,9 @@
   /* Navbar */
   --nav-bg: rgba(14, 14, 14, 0.65);
   --nav-border: rgba(255, 255, 255, 0.1);
-  --nav-border-hover: rgba(0, 210, 255, 0.5);
+  --nav-border-hover: rgba(98, 0, 255, 0.5);
   --nav-blur: 12px;
-  --nav-text-glow: 0 0 10px rgba(0, 210, 255, 0.7);
+  --nav-text-glow: 0 0 10px rgba(111, 0, 255, 0.7);
 
   --font-headline: 'Space Grotesk', sans-serif;
   --font-body: 'Manrope', sans-serif;
