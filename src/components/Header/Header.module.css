@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: row;
     gap: 1.5rem;
-    margin-top: 2rem; 
+    margin-top: 4rem; 
     text-align: center;
     animation: fadeAndSlideUp 0.8s ease-out forwards; 
 }

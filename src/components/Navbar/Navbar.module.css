@@ -19,7 +19,7 @@
 
 .navbar:hover {
   border-color: var(--nav-border-hover);
-  box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+  box-shadow: 10px 15px 25px rgba(47, 0, 67, 0.7);
 }
 
 .navLink {
