@@ -1,5 +1,6 @@
 import styles from './projects.module.css';
 import { ProjectTimeline, TimelineProject } from '@/components/ProjectTimeline/ProjectTimeline';
+import { GenerateStars } from '@/components/Stars/Stars';
 
 const PROJECTS: TimelineProject[] = [
     {
@@ -43,13 +44,14 @@ const PROJECTS: TimelineProject[] = [
 export default function Projects() {
     return (
         <div className={styles.container}>
+            <GenerateStars />
             <div className={styles.header}>
-                <h1>My Projects</h1>
-                <p>A timeline of my selected works and experiences.</p>
+                <h1>My Experience</h1>
+                <p>Below you will find a timeline of my selected works and experiences. Let me guide you through how I have grown as a developer.</p>
             </div>
 
             <ProjectTimeline projects={PROJECTS} />
-            <p className={styles.bottomText}>More projects coming soon...</p>
+            <p className={styles.bottomText}>The timeline is never finished...</p>
         </div>
     );
 }
