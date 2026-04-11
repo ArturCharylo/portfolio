@@ -1,0 +1,66 @@
+.navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 12px 32px;
+  border-radius: 9999px; /* Pill shape */
+  background: var(--nav-bg);
+  border: 1px solid var(--nav-border);
+  backdrop-filter: blur(var(--nav-blur));
+  -webkit-backdrop-filter: blur(var(--nav-blur)); /* Safari support */
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+  border-color: var(--nav-border-hover);
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+}
+
+.navLink {
+  color: var(--foreground-variant);
+  font-family: var(--font-headline);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary);
+  transition: width 0.3s ease;
+  box-shadow: var(--nav-text-glow);
+}
+
+.navLink:hover {
+  color: var(--foreground);
+  text-shadow: var(--nav-text-glow);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    top: 16px;
+    padding: 10px 24px;
+    gap: 20px;
+  }
+  .navLink {
+    font-size: 0.9rem;
+  }
+}
