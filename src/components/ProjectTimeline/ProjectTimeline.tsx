@@ -67,7 +67,7 @@ export const ProjectTimeline = ({ projects }: ProjectTimelineProps) => {
       if (node) {
         gsap.to(node, {
           borderColor: 'var(--secondary)',
-          backgroundColor: 'var(--secondary)',
+          backgroundColor: 'var(--timeline-highlight)',
           boxShadow: '0 0 15px rgba(var(--secondary-rgb), 0.8)',
           scrollTrigger: {
             trigger: item,

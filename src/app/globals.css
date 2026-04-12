@@ -7,9 +7,10 @@
   --foreground: #ffffff;
   --foreground-variant: #adaaaa;
   
-  --primary: #db90ff;
+  --primary: #be31ff;
   --secondary: #500081;
   --tertiary: #ff6a9f;
+  --timeline-highlight: #770eff;
   
   /* Primary colors RGB */
   --primary-rgb: 219, 144, 255;
