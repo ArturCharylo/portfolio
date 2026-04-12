@@ -1,6 +1,7 @@
 import styles from './projects.module.css';
 import { ProjectTimeline, TimelineProject } from '@/components/ProjectTimeline/ProjectTimeline';
 import { GenerateStars } from '@/components/Stars/Stars';
+import { Footer } from '@/components/Footer/Footer';
 
 const PROJECTS: TimelineProject[] = [
     {
@@ -52,6 +53,7 @@ export default function Projects() {
 
             <ProjectTimeline projects={PROJECTS} />
             <p className={styles.bottomText}>The timeline is never finished...</p>
+            <Footer />
         </div>
     );
 }
