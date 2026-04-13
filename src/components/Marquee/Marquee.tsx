@@ -14,6 +14,44 @@ const PROJECTS = [
   { id: 3, title: "Github", description: "My github overview", video: "/video3.webm", poster: "/video3.webm", url: "https://github.com/ArturCharylo" },
   { id: 4, title: "PyScripts", description: "Combination of Python scripts", video: "/video4.webm", poster: "/video4.webm", url: "https://github.com/ArturCharylo/Python_projects" },
 ];
+// Projects section prepared for future personalizaton, need to prepare videos and upgrade descriptions. For now, it'll be commented out
+// const PROJECTS = [
+//   { 
+//     id: 1, 
+//     title: "Argon2 MV3", 
+//     description: "NPM Library: High-performance WASM encryption solving CSP for Chrome Manifest V3.", // 
+//     video: "/videos/argon2.webm", 
+//     url: "https://github.com/ArturCharylo/argon2-extension-mv3" 
+//   },
+//   { 
+//     id: 2, 
+//     title: "Cryptono", 
+//     description: "Vault engine using Rust-powered search and Brotli compression for near-native performance.", // [cite: 28, 36]
+//     video: "/videos/cryptono.webm", 
+//     url: "https://github.com/ArturCharylo/Cryptono" 
+//   },
+//   { 
+//     id: 3, 
+//     title: "Quote-CLI", 
+//     description: "Open Source AI agent with multi-provider architecture using TypeScript OOP patterns.", // [cite: 53, 58]
+//     video: "/videos/quote-cli.webm", 
+//     url: "https://github.com/ArturCharylo/quote-cli" 
+//   },
+//   { 
+//     id: 4, 
+//     title: "E-commerce Sys", 
+//     description: "Full-stack production app with Stripe webhooks, Docker, and automated CI pipelines.", // [cite: 44, 51, 52]
+//     video: "/videos/ecommerce.webm", 
+//     url: "https://github.com/ArturCharylo" 
+//   },
+//   { 
+//     id: 5, 
+//     title: "ToDo Python", 
+//     description: "Decoupled ecosystem featuring Django REST, React, and Desktop GUI clients.", // [cite: 112, 113]
+//     video: "/videos/todo.webm", 
+//     url: "https://github.com/ArturCharylo/ToDo_python" 
+//   },
+// ];
 
 // Moved outside component — stable reference, never recreated
 const RENDER_PROJECTS = [...PROJECTS, ...PROJECTS];
