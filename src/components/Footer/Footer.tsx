@@ -136,8 +136,7 @@ export function Footer() {
               <div className={styles.brand}>
                 <div className={styles.logo}>ARTUR</div>
                 <p className={styles.brandDesc}>
-                  Crafting digital experiences through the lens of modernist
-                  architecture and precision engineering.
+                  Feel free to reach out if you have an interesting project in mind or just want to connect!
                 </p>
               </div>
 
