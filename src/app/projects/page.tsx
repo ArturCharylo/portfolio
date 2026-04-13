@@ -45,7 +45,7 @@ const PROJECTS: TimelineProject[] = [
         title: "Web E-commerce",
         role: "Full Stack Developer",
         description: "A modern, responsive e-commerce website built with React and Express.js. It features a clean design, smooth animations, and a user-friendly interface to provide an enjoyable shopping experience. This project taught me a lot about handling complex state management, integrating third-party APIs, optimizing performance for web applications and transaction security.",
-        url: "COMING SOON"
+        url: ""
     },
     {
         id: 7,
