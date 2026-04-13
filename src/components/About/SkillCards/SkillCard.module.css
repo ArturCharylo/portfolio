@@ -375,7 +375,7 @@
 }
 
 .card--visual:hover   .cardTitle { color: var(--primary); }
-.card--structural:hover .cardTitle { color: var(--secondary); }
+.card--structural:hover .cardTitle { color: var(--skill-card-2); }
 .card--motion:hover   .cardTitle { color: var(--tertiary); }
 .card--neural:hover   .cardTitle { color: var(--color-white); }
 
