@@ -32,10 +32,11 @@ function MotionIllustration() {
   return (
     <div className={styles.illustration}>
       <div className={`${styles.illustrationGlow} ${styles.glowTertiary}`} />
-      <div className={styles.orbitWrapper}>
-        <div className={`${styles.orbitRing} ${styles.orbitRingLarge}`} />
-        <div className={`${styles.orbitRing} ${styles.orbitRingSmall}`} />
-        <div className={styles.orbitCore} />
+      <div className={styles.pipelineWrapper}>
+        <div className={`${styles.packet} ${styles.p1}`} />
+        <div className={`${styles.packet} ${styles.p2}`} />
+        <div className={`${styles.packet} ${styles.p3}`} />
+        <div className={styles.pipelineLine} />
       </div>
     </div>
   );
