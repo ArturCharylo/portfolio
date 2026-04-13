@@ -3,7 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Footer.module.css";
 
-const NAV_LINKS = ["Work", "Expertise", "About", "Contact"];
+const NAV_LINKS = [
+  ["Work", "/#"],
+  ["Expertise", "/projects"],
+  ["About", "/#about"],
+  ["Contact", "/#contact"]
+];
 const SOCIAL_LINKS = [
   ["LinkedIn", "https://www.linkedin.com/in/artur-charylo"],
   ["LeetCode", "https://leetcode.com/u/arturcharylo/"],
@@ -84,6 +89,7 @@ export function Footer() {
       <footer 
         ref={footerRef} 
         className={`${styles.footer} ${isReady ? styles.footerReady : styles.footerHidden}`}
+        id="contact"
       >
         {/* Parallax wrapper acts as the moving layer inside the static footer mask */}
         <div ref={parallaxRef} className={styles.parallaxWrapper}>
@@ -140,8 +146,10 @@ export function Footer() {
                 <h3 className={styles.linkGroupHeading}>Directory</h3>
                 <ul className={styles.linkList}>
                   {NAV_LINKS.map((l) => (
-                    <li key={l}>
-                      <a href="#" className={styles.link}>{l}</a>
+                    <li key={l[1]}>
+                      <a href={l[1]} className={styles.link}>
+                        {l[0]}
+                      </a>
                     </li>
                   ))}
                 </ul>
