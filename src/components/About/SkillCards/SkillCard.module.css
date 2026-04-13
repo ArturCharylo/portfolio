@@ -397,6 +397,42 @@
   max-width: 580px;
 }
 
+/* Motion - DevOps Pipeline */
+.pipelineWrapper {
+  width: 12rem;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pipelineLine {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(var(--tertiary-rgb), 0.1);
+}
+
+.packet {
+  width: 1rem;
+  height: 1rem;
+  background: var(--tertiary);
+  border-radius: 3px;
+  position: absolute;
+  animation: flow 3s linear infinite;
+  box-shadow: 0 0 15px var(--tertiary);
+}
+
+.p2 { animation-delay: 1s; }
+.p3 { animation-delay: 2s; }
+
+@keyframes flow {
+  0% { left: 0%; opacity: 0; transform: scale(0.5); }
+  20% { opacity: 1; transform: scale(1); }
+  80% { opacity: 1; transform: scale(1); }
+  100% { left: 100%; opacity: 0; transform: scale(0.5); }
+}
+
 /* ─── Neural — animation delays ──────────────────────────────── */
 .delay1 { animation-delay: 0.1s; }
 .delay2 { animation-delay: 0.3s; }
