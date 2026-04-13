@@ -1,5 +1,6 @@
 import styles from './projects.module.css';
-import { ProjectTimeline, TimelineProject } from '@/components/ProjectTimeline/ProjectTimeline';
+import { ProjectTimeline } from '@/components/ProjectTimeline/ProjectTimeline';
+import type { TimelineProject } from '@/app/types/index';
 import { GenerateStars } from '@/components/Stars/Stars';
 import { Footer } from '@/components/Footer/Footer';
 
