@@ -14,3 +14,13 @@ export interface ProjectCardProps {
   posterSrc?: string;
   url?: string;
 }
+
+export interface TimelineProject {
+  id: number;
+  title: string;
+  role: string;
+  description: string;
+  videoSrc?: string;
+  posterSrc?: string;
+  url?: string;
+}

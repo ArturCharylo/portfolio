@@ -134,7 +134,7 @@ export function Footer() {
 
               {/* Brand */}
               <div className={styles.brand}>
-                <div className={styles.logo}>STUDIO</div>
+                <div className={styles.logo}>ARTUR</div>
                 <p className={styles.brandDesc}>
                   Crafting digital experiences through the lens of modernist
                   architecture and precision engineering.
@@ -143,7 +143,7 @@ export function Footer() {
 
               {/* Directory */}
               <nav className={styles.linkGroup} aria-label="Footer navigation">
-                <h3 className={styles.linkGroupHeading}>Directory</h3>
+                <h3 className={styles.linkGroupHeading}>Sections</h3>
                 <ul className={styles.linkList}>
                   {NAV_LINKS.map((l) => (
                     <li key={l[1]}>
