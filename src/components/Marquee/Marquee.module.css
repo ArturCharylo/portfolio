@@ -22,3 +22,13 @@
   will-change: transform;
   backface-visibility: hidden;
 }
+
+@media (max-width: 768px) {
+  .marqueeContainer {
+    padding: 30px 0;
+  }
+  
+  .track > * {
+    width: 250px; /* Adjust card width for smaller screens */
+  }
+}
