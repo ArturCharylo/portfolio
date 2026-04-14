@@ -188,8 +188,7 @@ export function Footer() {
                 &copy; {new Date().getFullYear()} Artur Charyło. All rights reserved.
               </p>
               <div className={styles.legal}>
-                <a href="#" className={styles.legalLink}>Privacy Protocol</a>
-                <a href="#" className={styles.legalLink}>Terms of Engagement</a>
+                <a href="/privacy" className={styles.legalLink}>Privacy Policy</a>
               </div>
             </div>
 
