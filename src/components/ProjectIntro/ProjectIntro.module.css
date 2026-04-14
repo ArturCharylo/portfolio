@@ -9,15 +9,16 @@
 }
 
 .description {
-  font-size: 2.25rem;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
   line-height: 1.5;
-   background: var(--gradient-project-intro);
-    background-size: 300% auto;
-    background-position: 0% center;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: background-position 2.5s ease-out;
+  background: var(--gradient-project-intro);
+  background-size: 300% auto;
+  background-position: 0% center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 2.5s ease-out;
+  word-wrap: break-word;
 }
 
 .description:hover {

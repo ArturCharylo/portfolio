@@ -2,11 +2,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     gap: 1.5rem;
     margin-top: 4rem; 
     text-align: center;
     animation: fadeAndSlideUp 0.8s ease-out forwards; 
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        padding: 0;
+    }
 }
 
 .headertext{
@@ -23,7 +31,12 @@
     box-shadow: 0 0 30px rgba(var(--color-white-rgb), 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    left: -50px;
+}
+
+@media (min-width: 768px) {
+    .profileImage {
+        left: -50px;
+    }
 }
 
 .profileImage:hover {
@@ -32,7 +45,7 @@
 }
 
 .title {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw + 1rem, 3.5rem);
     font-weight: 800;
     letter-spacing: -0.05em;
     margin: 0;
@@ -46,7 +59,7 @@
 }
 
 .subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw + 0.5rem, 1.5rem);
     font-weight: 500;
     background: var(--gradient-header-subtitle);
     background-size: 300% auto;

@@ -5,8 +5,8 @@
 }
 
 .cardContainer {
-  width: 400px;
-  height: 250px;
+  width: min(400px, 80vw);
+  height: min(250px, 50vw);
   position: relative;
   flex-shrink: 0;
   border-radius: 24px;

@@ -6,6 +6,7 @@
   perspective-origin: center center;
   display: flex;
   align-items: center;
+  min-height: 400px;
 }
 
 .track {

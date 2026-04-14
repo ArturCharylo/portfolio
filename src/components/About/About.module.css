@@ -1,5 +1,5 @@
 .about {
-    font-size: 1.825rem;
+    font-size: clamp(1.2rem, 3vw, 1.825rem);
     line-height: 1.5;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
 }
 
 .description {
-    font-size: 2.125rem;
+    font-size: clamp(1.5rem, 4vw, 2.125rem);
     line-height: 1.5;
     background: var(--gradient-about);
     background-size: 300% auto;
@@ -27,6 +27,7 @@
     transition: background-position 3.5s ease-out;
     /* Contain the gradient layer to this element */
     will-change: background-position;
+    word-wrap: break-word;
 }
 
 .description:hover {
