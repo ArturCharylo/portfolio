@@ -308,3 +308,17 @@
   height: 100%;
   will-change: transform;
 }
+
+@media (max-width: 480px) {
+  .ctaHeadline {
+    font-size: clamp(1.25rem, 10vw, 2.5rem);
+  }
+  
+  .ctaEmailText {
+    font-size: clamp(1rem, 5vw, 1.75rem);
+  }
+
+  .linkGroupHeading{
+    margin-top: 1.25rem;
+  }
+}
