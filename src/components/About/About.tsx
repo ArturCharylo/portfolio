@@ -19,8 +19,8 @@ export const About = () => {
                 }
             });
         }, {
-            rootMargin: '0px 0px 0px 0px',
-            threshold: 0.1
+            rootMargin: '0px',
+            threshold: 0.05
         });
 
         const currentRef = domRef.current;
@@ -35,7 +35,6 @@ export const About = () => {
         <div
             ref={domRef}
             className={`${styles.about} ${isVisible ? styles.visible : styles.hidden}`}
-            id="about"
         >
             <Link href="/projects" className={styles.viewAllLink}>
                 <span className={styles.viewAllLinkText}>See my experience</span>
@@ -53,7 +52,7 @@ export const About = () => {
                 </svg>
             </Link>
             <p className={styles.description}>
-                I`m a passionate software developer with a knack for crafting elegant solutions to complex problems. With a strong foundation in both frontend and backend technologies, I thrive on creating seamless user experiences and robust applications. My journey in the tech world has been fueled by curiosity and a relentless drive to learn, allowing me to stay at the forefront of industry trends and best practices.
+                This is a simple React application that demonstrates the use of React Router for navigation and SCSS for styling. It includes a home page, an about page, and a contact page. The application is designed to be responsive and user-friendly.
             </p>
 
             <div className={styles.skills}>

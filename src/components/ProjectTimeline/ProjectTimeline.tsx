@@ -5,10 +5,19 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
-import styles from '@/components/ProjectTimeline/ProjectTimeline.module.css';
-import type { TimelineProject } from '@/app/types/index';
+import styles from './ProjectTimeline.module.css';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+export interface TimelineProject {
+  id: number;
+  title: string;
+  role: string;
+  description: string;
+  videoSrc?: string;
+  posterSrc?: string;
+  url?: string;
+}
 
 interface ProjectTimelineProps {
   projects: TimelineProject[];

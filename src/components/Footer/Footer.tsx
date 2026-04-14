@@ -3,12 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Footer.module.css";
 
-const NAV_LINKS = [
-  ["Work", "/#"],
-  ["Expertise", "/projects"],
-  ["About", "/#about"],
-  ["Contact", "/#contact"]
-];
+const NAV_LINKS = ["Work", "Expertise", "About", "Contact"];
 const SOCIAL_LINKS = [
   ["LinkedIn", "https://www.linkedin.com/in/artur-charylo"],
   ["LeetCode", "https://leetcode.com/u/arturcharylo/"],
@@ -89,7 +84,6 @@ export function Footer() {
       <footer 
         ref={footerRef} 
         className={`${styles.footer} ${isReady ? styles.footerReady : styles.footerHidden}`}
-        id="contact"
       >
         {/* Parallax wrapper acts as the moving layer inside the static footer mask */}
         <div ref={parallaxRef} className={styles.parallaxWrapper}>
@@ -134,21 +128,20 @@ export function Footer() {
 
               {/* Brand */}
               <div className={styles.brand}>
-                <div className={styles.logo}>ARTUR</div>
+                <div className={styles.logo}>STUDIO</div>
                 <p className={styles.brandDesc}>
-                  Feel free to reach out if you have an interesting project in mind or just want to connect!
+                  Crafting digital experiences through the lens of modernist
+                  architecture and precision engineering.
                 </p>
               </div>
 
               {/* Directory */}
               <nav className={styles.linkGroup} aria-label="Footer navigation">
-                <h3 className={styles.linkGroupHeading}>Sections</h3>
+                <h3 className={styles.linkGroupHeading}>Directory</h3>
                 <ul className={styles.linkList}>
                   {NAV_LINKS.map((l) => (
-                    <li key={l[1]}>
-                      <a href={l[1]} className={styles.link}>
-                        {l[0]}
-                      </a>
+                    <li key={l}>
+                      <a href="#" className={styles.link}>{l}</a>
                     </li>
                   ))}
                 </ul>
@@ -188,7 +181,8 @@ export function Footer() {
                 &copy; {new Date().getFullYear()} Artur Charyło. All rights reserved.
               </p>
               <div className={styles.legal}>
-                <a href="/privacy" className={styles.legalLink}>Privacy Policy</a>
+                <a href="#" className={styles.legalLink}>Privacy Protocol</a>
+                <a href="#" className={styles.legalLink}>Terms of Engagement</a>
               </div>
             </div>
 
