@@ -1,4 +1,4 @@
-export function Privacy() {
+export default function Page() {
   return (
     <>
       <h1>Privacy Policy</h1>
@@ -10,4 +10,5 @@ export function Privacy() {
           <li>Usage information, including how you interact with our website.</li>
         </ul>
     </>
-    );}
+    );
+}
