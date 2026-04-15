@@ -53,7 +53,7 @@ export const About = () => {
                 </svg>
             </Link>
             <p className={styles.description}>
-                I`m a passionate software developer with a knack for crafting elegant solutions to complex problems. With a strong foundation in both frontend and backend technologies, I thrive on creating seamless user experiences and robust applications. My journey in the tech world has been fueled by curiosity and a relentless drive to learn, allowing me to stay at the forefront of industry trends and best practices.
+                I&apos;m a passionate software developer with a knack for crafting elegant solutions to complex problems. With a strong foundation in both frontend and backend technologies, I thrive on creating seamless user experiences and robust applications. My journey in the tech world has been fueled by curiosity and a relentless drive to learn, allowing me to stay at the forefront of industry trends and best practices.
             </p>
 
             <div className={styles.skills}>
