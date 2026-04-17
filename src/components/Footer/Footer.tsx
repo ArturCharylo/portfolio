@@ -110,8 +110,8 @@ export function Footer() {
                 <span className={styles.ctaGradient}>Future.</span>
               </h2>
 
-              <a href="mailto:artur.cha@outlook.com" className={styles.ctaEmail}>
-                <span className={styles.ctaEmailText}>artur.cha@outlook.com</span>
+              <a href="mailto:artur.charylo@gmail.com" className={styles.ctaEmail}>
+                <span className={styles.ctaEmailText}>artur.charylo@gmail.com</span>
                 <svg
                   className={styles.ctaArrow}
                   viewBox="0 0 24 24"
