@@ -66,7 +66,7 @@ const PROJECTS: TimelineProject[] = [
         title: "Website for a financial advisor",
         role: "Software Engineer",
         description: "A modern, lightweight,responsive website for a financial advisor, showcasing services and building trust with potential clients.",
-        url: "https://szymon-n.pages.dev"
+        url: "https://szymondoradca.pl"
     },
     {
         id: 10,
