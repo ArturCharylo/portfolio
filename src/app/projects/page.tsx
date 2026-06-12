@@ -82,6 +82,13 @@ const PROJECTS: TimelineProject[] = [
         description: "This very site. Designed and built to showcase my web development skills. It features smooth scrolling, complex GSAP animations, and a responsive layout using modern React and Next.js.",
         url: "https://github.com/ArturCharylo/artur-cv"
     },
+    {
+        id: 12,
+        title: "Keep my plans",
+        role: "Full Stack Developer",
+        description: "A collaborative web application designed to organize and group open-ended personal plans, media recommendations (movies, songs), and shared lists.",
+        url: "https://keep-my-plans.vercel.app/"
+    }
 ];
 
 export default function Projects() {
