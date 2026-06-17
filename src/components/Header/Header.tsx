@@ -5,7 +5,7 @@ export function Header() {
     return (
         <header className={styles.header}>
             <Image
-                src="/do_cv.jpg" 
+                src="/do_cv.webp" 
                 alt="Profile picture" 
                 width={150} 
                 height={150} 
