@@ -4,7 +4,7 @@ export function ProjectIntro() {
   return (
     <div className={styles.projectIntro}>
       <p className={styles.description}>
-        Explore a selection of my products, showcasing my skills and creativity in various domains. Each product highlights unique challenges and innovative solutions, reflecting my passion for technology and design.
+        Explore a selection of my engineering projects, tools, and infrastructure designs. Each highlights practical problem-solving across cloud-native environments, automated delivery pipelines, and high-performance systems.
       </p>
     </div>
   );

@@ -7,31 +7,31 @@ export interface SkillCardData {
 
 export const CARDS: SkillCardData[] = [
   {
-    id: "visual",
-    title: "Frontend Engineering",
-    body: "Crafting secure and responsive user interfaces using React, TypeScript, and Vite. My approach to the frontend focuses on bridging the gap between high-level aesthetics and robust session protection, ensuring that performance never comes at the cost of security.",
+    id: "motion",
+    title: "Cloud & DevSecOps",
+    body: "Orchestrating resilient delivery workflows and production environments through enterprise automation. I treat DevOps not as an afterthought, but as an active discipline combining multi-stage CI/CD pipelines, container orchestration, and strict supply-chain security gates.",
     detail:
-      "I implement advanced patterns like i18n dynamic translations and Anti-XSS protections. Whether it's a PWA or a complex E-commerce solution, I ensure sub-second rendering and a seamless user experience across all modern browsers.",
+      "Experienced in designing Azure DevOps and GitLab CI/CD pipelines with automated Trivy CVE gates, CycloneDX SBOM generation, and cryptographic signing with Cosign. From Kubernetes clusters (Helm, Kind) with HPA to Prometheus and Grafana observability pipelines, I build self-healing, auditable delivery ecosystems.",
   },
   {
     id: "structural",
-    title: "High-Performance Core",
-    body: "The architectural backbone of my work lies in low-level systems and high-performance web tech. By leveraging C++, Rust, and WebAssembly, I build core modules that handle heavy computations—like encryption and data compression—with near-native efficiency.",
+    title: "High-Performance Core & Systems",
+    body: "The architectural backbone of my work lies in low-level systems programming and high-efficiency compute. Leveraging Rust, C++, and WebAssembly, I design high-performance modules and microservices handling intensive tasks—from CAN/OBD-II telemetry simulation to client-side cryptography.",
     detail:
-      "From developing WASM-based Argon2id libraries to solving Content Security Policy (CSP) restrictions in Manifest V3, I focus on building unshakeable foundations that scale. My code is rooted in clean architecture and rigorous performance tuning.",
+      "Author of production-ready packages like argon2-extension-mv3, resolving Manifest V3 CSP constraints without unsafe-eval. Whether compiling Brotli compression in Rust/WASM or engineering containerized Rust telemetry engines, I prioritize memory safety, clean architecture, and near-native runtime performance.",
   },
   {
-    id: "motion",
-    title: "DevOps & Automation",
-    body: "Orchestrating the rhythm of deployment through automated pipelines and containerization. I view DevOps not as a secondary task, but as the vital 'motion' that keeps software alive and evolving through CI/CD, Docker, and Linux-based infrastructure.",
+    id: "visual",
+    title: "Cloud Infrastructure & GitOps",
+    body: "Translating architectural intent into scalable, reproducible infrastructure. I focus on Infrastructure as Code (IaC), GitOps workflows, and hybrid cloud setups (Azure, AWS) designed for high availability, minimal baseline cost, and rapid disaster recovery.",
     detail:
-      "I specialize in automating deployment workflows using GitHub Actions and GitLab CI. By managing environments with Docker Compose and Nginx, I create fluid, self-healing systems that reduce technical debt and accelerate the delivery cycle.",
+      "Automating serverless and container deployments to Azure Container Apps (ACA) using Terraform with zero-trust Service Principal authentication. Proficient in GitOps workflows using ArgoCD, NGINX Ingress routing, and cloud-native scaling strategies tailored to modern microservice footprints.",
   },
   {
     id: "neural",
-    title: "Intelligent Systems",
-    body: "Pioneering the integration of AI and scalable logic. I design multi-provider AI architectures and non-linear learning algorithms that adapt to user behavior. This is about creating systems that are not just functional, but context-aware and extensible.",
+    title: "Intelligent Systems & Integrations",
+    body: "Designing scalable backend logic and extensible architectures for AI-driven tooling. I build modular systems and developer CLI utilities that seamlessly orchestrate multi-provider LLM integrations while maintaining robust error boundaries.",
     detail:
-      "Through my contributions to Open Source (like quote-cli), I've implemented OOP design patterns to support diverse AI APIs including OpenAI and Anthropic. My focus is on reducing cognitive friction by building intelligent, predictive backend logic.",
+      "Active contributor to open-source developer tooling (such as quote-cli), implementing OOP-driven architectures that support OpenAI, Anthropic, and GitHub Copilot APIs. I focus on building maintainable abstractions, CLI tools, and deterministic pipelines around dynamic AI capabilities.",
   },
 ];
